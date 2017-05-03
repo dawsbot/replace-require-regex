@@ -1,0 +1,37 @@
+{
+  "name": "replace-require-regex",
+  "version": "0.0.0",
+  "description": "regex based require/import replacements for js files",
+  "license": "MIT",
+  "homepage": "https://github.com/dawsbot/replace-require-regex#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawsbot/replace-require-regex.git"
+  },
+  "author": {
+    "name": "Dawson Botsford",
+    "email": "dawsonb@uber.com",
+    "url": "dawsonbotsford.com"
+  },
+  "bugs": {
+    "url": "https://github.com/dawsbot/replace-require-regex/issues"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "xo": "^0.17.1"
+  },
+  "xo": {
+    "space": true
+  }
+}
