@@ -1,6 +1,6 @@
 {
   "name": "replace-require-regex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "regex based require/import replacements for js files",
   "license": "MIT",
   "homepage": "https://github.com/dawsbot/replace-require-regex#readme",
