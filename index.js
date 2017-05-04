@@ -1,8 +1,8 @@
 'use strict';
 module.exports = (content, from, to) => {
   const regexes = [
-    /(require\(['|"])(a)(.*?['|"]\))/g,
-    /(from\s+['|"])(a)(.*?['|"])/g
+    new RegExp(`(require\\(['|"])(${from})(.*?['|"]\\))`, 'g'),
+    new RegExp(`(from\\s+['|"])(${from})(.*?['|"])`, 'g')
   ];
   regexes.forEach(reg => {
     const res = reg.exec(content);

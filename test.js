@@ -1,25 +1,25 @@
 import test from 'ava';
 import fn from './';
 
-const from = 'a';
-const to = 'b';
+const from = '@namespace/hard-thing-to-replace';
+const to = '@namespace/replace-with-this-thing';
 
 const requireTestCases = [
   {
-    in: `const a = require('a');`,
-    out: `const a = require('b');`
+    in: `const a = require('${from}');`,
+    out: `const a = require('${to}');`
   },
   {
-    in: `const a = require("a");`,
-    out: `const a = require("b");`
+    in: `const a = require("${from}");`,
+    out: `const a = require("${to}");`
   },
   {
-    in: `require('a/extra');`,
-    out: `require('b/extra');`
+    in: `require('${from}/extra');`,
+    out: `require('${to}/extra');`
   },
   {
-    in: `require('./a')`,
-    out: `require('./a')`
+    in: `require('./${from}')`,
+    out: `require('./${from}')`
   }
 ];
 
@@ -32,20 +32,20 @@ test('require replaces', t => {
 
 const importTestCases = [
   {
-    in: `import a from 'a'`,
-    out: `import a from 'b'`
+    in: `import a from '${from}'`,
+    out: `import a from '${to}'`
   },
   {
-    in: `import a from "a"`,
-    out: `import a from "b"`
+    in: `import a from "${from}"`,
+    out: `import a from "${to}"`
   },
   {
-    in: `import a from 'a/extra'`,
-    out: `import a from 'b/extra'`
+    in: `import a from '${from}/extra'`,
+    out: `import a from '${to}/extra'`
   },
   {
-    in: `import a from './a'`,
-    out: `import a from './a'`
+    in: `import a from './${from}'`,
+    out: `import a from './${from}'`
   }
 ];
 
