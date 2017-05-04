@@ -1,9 +1,8 @@
 import test from 'ava';
 import fn from './';
 
-// const from = '@namespace/hard-thing-to-replace';
-const from = 'a';
-const to = 'b';
+const from = '@namespace/hard-thing-to-replace';
+const to = '@namespace/replace-with-this-thing';
 
 const requireTestCases = [
   {
