@@ -20,6 +20,10 @@ const requireTestCases = [
   {
     in: `require('./${from}')`,
     out: `require('./${from}')`
+  },
+  {
+    in: `require('./node_modules/${from}')`,
+    out: `require('./node_modules/${to}')`
   }
 ];
 
@@ -46,6 +50,10 @@ const importTestCases = [
   {
     in: `import a from './${from}'`,
     out: `import a from './${from}'`
+  },
+  {
+    in: `import a from './node_modules/${from}'`,
+    out: `import a from './node_modules/${to}'`
   }
 ];
 
