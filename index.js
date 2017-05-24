@@ -7,6 +7,7 @@ module.exports = (content, from, to) => {
   ];
   regexes.forEach(reg => {
     let match;
+    // eslint-disable-next-line no-cond-assign
     while (match = reg.exec(content)) {
       const before = match[1];
       const after = match[2];
