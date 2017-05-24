@@ -6,12 +6,12 @@ module.exports = (content, from, to) => {
     new RegExp(`(from\\s+['|"])${from}(.*?['|"])`, 'g')
   ];
   regexes.forEach(reg => {
-    const res = reg.exec(content);
-    if (res) {
-      const before = res[1];
-      const after = res[2];
+    let match;
+    while (match = reg.exec(content)) {
+      const before = match[1];
+      const after = match[2];
       const wrappedTo = `${before}${to}${after}`;
-      content = content.replace(res[0], wrappedTo);
+      content = content.replace(match[0], wrappedTo);
     }
   });
   return content;
